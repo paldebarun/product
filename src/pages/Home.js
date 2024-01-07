@@ -14,7 +14,7 @@ const Home = () => {
     const productRef=useRef(null);
 
     return (
-        <div className='px-3'>
+        <div className='px-3 '>
            {/* Navigation bar */}
             <Navbar scrollToRef={aboutRef} productRef={productRef} />
             {/* introsection */}
@@ -65,7 +65,9 @@ const Home = () => {
                 </div>
 
             </div>
-          <div className='w-screen h-[50px]'></div>
+
+          <div className='w-screen border h-[300px]'></div>
+
          {/* footer section */}
 
          <Footer scrollToRef={aboutRef} productRef={productRef}/>

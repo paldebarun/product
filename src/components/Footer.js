@@ -61,8 +61,8 @@ const Footer = ({scrollToRef,productRef}) => {
     }
 
   return (
-    <div className='w-screen   flex justify-between items-center px-3 h-[200px] bg-amber-100'>
-      <div className='flex gap-[30px] sm:gap-[15px] '>
+    <div className='w-full   flex justify-center sm:justify-between items-center px-3 h-[200px] bg-amber-100'>
+      <div className='flex  gap-[30px] sm:gap-[15px] '>
       <motion.div>
       <RiInstagramFill
         

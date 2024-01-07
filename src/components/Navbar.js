@@ -72,7 +72,7 @@ const Navbar = ({scrollToRef,productRef}) => {
             <div className='rounded-full bg-white p-2 '>
                 <IoIosClose onClick={HandleOpenMenu} />
             </div>
-            </div> : <IoMdMenu  onClick={HandleOpenMenu} className='text-green-700 w-[20px] absolute right-3 h-[20px]'/>}
+            </div> : <IoMdMenu  onClick={HandleOpenMenu} className='text-green-700 w-[25px] absolute right-[20px] h-[25px]'/>}
             
         </div>
     </div>
