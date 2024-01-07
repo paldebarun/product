@@ -66,7 +66,7 @@ const Home = () => {
 
             </div>
 
-          <div className='w-screen border h-[300px]'></div>
+          <div className='w-screen h-[300px]'></div>
 
          {/* footer section */}
 

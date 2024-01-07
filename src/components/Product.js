@@ -4,7 +4,7 @@ import bgimage from '../images/pawel-czerwinski-lWBZ01XRRoI-unsplash.jpg'
 
 const Product = ({image,description}) => {
   return (
-    <div className='border m-[10px] flex flex-col  w-full md:w-[300px] lg:w-[350px] justify-between shadow-lg  h-[450px] sm:h-[600px] items-center'>
+    <div className=' m-[10px] flex flex-col  w-full md:w-[300px] lg:w-[350px] justify-between shadow-lg  h-[450px] sm:h-[600px] items-center'>
     
     <img src={image} className=' w-[200px] sm:w-full h-auto  ' />
     
