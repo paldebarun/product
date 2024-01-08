@@ -1,29 +1,14 @@
 import './App.css';
 import { Route,Routes } from 'react-router-dom';
 import Home from './pages/Home';
-import {motion,useScroll,useSpring,useMotionValueEvent} from 'framer-motion'
-import { useState } from 'react';
+import {motion,useScroll,useSpring} from 'framer-motion'
+
 
 function App() {
 
   const {scrollYProgress}=useScroll();
 
   const scalex=useSpring(scrollYProgress);
-
-  const {scrollY}=useScroll();
-  const [hidden,sethidden]=useState(false);
-
-  useMotionValueEvent(scrollY,"change",(latest)=>{
-    const previous=scrollY.getPrevious();
-     
-    if(latest>previous ){
-      sethidden(true);
-    }
-    else{
-      sethidden(false);
-    }
-    
-  });
 
   return (
     <div className="App">

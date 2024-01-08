@@ -18,6 +18,8 @@ const Footer = ({scrollToRef,productRef}) => {
         }
     }
 
+    
+
     const handleScrollToproduct = () => {
         if (productRef && productRef.current) {
             window.scrollTo({
@@ -55,13 +57,13 @@ const Footer = ({scrollToRef,productRef}) => {
       }
       ,
       transition:{
-        duration:2,
-        delay:0.05
+        duration: 10,
+        delay: 0.2,
       }
     }
 
   return (
-    <div className='w-full   flex justify-center sm:justify-between items-center px-3 h-[200px] bg-amber-100'>
+    <div className='w-full  flex flex-col sm:flex-row gap-[30px] sm:gap-0 justify-center sm:justify-between items-center px-3 h-[200px] bg-amber-100'>
       <div className='flex  gap-[30px] sm:gap-[15px] '>
       <motion.div>
       <RiInstagramFill
@@ -98,22 +100,22 @@ onClick={()=>{handleOnclick("twitter")}}
         
       </div>
 
-      <div className='hidden sm:flex gap-[20px] items-center'>
+      <div className='flex gap-[20px] items-center'>
             <motion.div
             variants={fadeInAnimationVariants}
         initial="initial"
         whileInView="animate"
-             className='underline-hover text-green-700  ' onClick={handleScrollToAbout}>About us</motion.div>
+             className='underline-hover text-green-700  ' onClick={handleScrollToAbout}  >About us</motion.div>
             <motion.div
             variants={fadeInAnimationVariants}
         initial="initial"
         whileInView="animate"
-             className='underline-hover text-green-700 ' onClick={handleScrollToproduct}>Products</motion.div>
+             className='underline-hover text-green-700 ' onClick={handleScrollToproduct}  >Products</motion.div>
             <motion.div 
             variants={fadeInAnimationVariants}
         initial="initial"
         whileInView="animate"
-            className='sliding-background hover:cursor-pointer text-green-700 border border-green-700 p-2'>Subscribe</motion.div>
+            className='sliding-background hover:cursor-pointer text-green-700 border border-green-700 p-2'  >Subscribe</motion.div>
         </div>
     </div>
   )
