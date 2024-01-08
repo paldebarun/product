@@ -6,10 +6,27 @@ import Productwiper from '../components/Productwiper';
 import aboutpagebackgrounde from '../images/aboutpagebackground.png'
 import { useRef } from 'react';
 import Footer from '../components/Footer';
-
+import LogoText from '../constants/LogoText';
+import {motion} from 'framer-motion'
 
 const Home = () => {
 
+    const fadeInAnimationVariants={
+        initial:{
+          opacity:0,
+          y:100,
+        },
+        animate:(index)=>(
+          {
+            opacity:1,
+            y:0,
+            transition:{
+              duration:0.7,
+              delay:0.05*index,
+            },
+          }),
+        
+      }
     const aboutRef = useRef(null);
     const productRef=useRef(null);
 
@@ -20,7 +37,21 @@ const Home = () => {
             {/* introsection */}
             <div className='Introsection p-2 flex   w-[10/12] gap-[20px] h-[500px]  flex-col justify-center items-center  '>
                 {/* intro text */}
-                <div className='font-bold t text-4xl h-auto sm:text-8xl text-green-700'>LOMBOK</div>
+                {/* <div className='font-bold t text-4xl h-auto sm:text-8xl text-green-700'>
+                LOMBOK</div> */}
+                <div className='flex font-bold t text-4xl h-auto sm:text-8xl text-green-700'>
+                    {
+                        LogoText.map((character,index)=>(
+                          <motion.div
+                          variants={fadeInAnimationVariants}
+        initial="initial"
+        whileInView="animate"
+        custom={index}
+                          >{character}</motion.div>
+                        ))
+
+                    }
+                </div>
                 <div className='text-green-700'>HOLISTIC HEALTH</div>
                 <div className='w-[100px] sm:w-[200px] h-[5px] rounded-xl bg-green-700'></div>
 
