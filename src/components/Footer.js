@@ -107,19 +107,28 @@ onClick={()=>{handleOnclick("twitter")}}
         initial="initial"
         whileInView="animate"
         custom='1'
-             className='underline-hover text-[15px] sm:text-md text-green-700  ' onClick={handleScrollToAbout}  >About us</motion.div>
+             className='underline-hover text-[10px] sm:text-md text-green-700  ' onClick={handleScrollToAbout}  >About us</motion.div>
+
             <motion.div
             variants={fadeInAnimationVariants}
         initial="initial"
         whileInView="animate"
         custom='3'
-             className='underline-hover text-[15px] sm:text-md text-green-700 ' onClick={handleScrollToproduct}  >Products</motion.div>
-            <motion.div 
+             className='underline-hover text-[10px] sm:text-md text-green-700 ' onClick={handleScrollToproduct}  >Products</motion.div>
+
+<motion.div
             variants={fadeInAnimationVariants}
         initial="initial"
         whileInView="animate"
         custom='5'
-            className='sliding-background text-[15px] sm:text-md hover:cursor-pointer text-green-700 border border-green-700 p-2'  >Subscribe</motion.div>
+             className='underline-hover text-[10px] sm:text-md text-green-700 ' onClick={handleScrollToproduct} >Contact Us</motion.div>
+
+            <motion.div 
+            variants={fadeInAnimationVariants}
+        initial="initial"
+        whileInView="animate"
+        custom='7'
+            className='sliding-background text-[10px] sm:text-md hover:cursor-pointer text-green-700 border border-green-700 p-2'  >Subscribe</motion.div>
         </div>
     </div>
   )

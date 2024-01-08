@@ -59,6 +59,7 @@ const Navbar = ({scrollToRef,productRef}) => {
         <div className='hidden sm:flex gap-[20px] items-center'>
             <div className='underline-hover text-green-700  ' onClick={handleScrollToAbout}>About us</div>
             <div className='underline-hover text-green-700 ' onClick={handleScrollToproduct}>Products</div>
+            <div className='underline-hover text-green-700 ' onClick={handleScrollToproduct}>Contact Us</div>
             <div className='sliding-background hover:cursor-pointer text-green-700 border border-green-700 p-2'>Subscribe</div>
         </div>
 
@@ -67,6 +68,7 @@ const Navbar = ({scrollToRef,productRef}) => {
 
             <div className='underline-hover text-green-700 ' onClick={handleScrollToAbout}>About us</div>
             <div className='underline-hover text-green-700 ' onClick={handleScrollToproduct}>Products</div>
+            <div className='underline-hover text-green-700 ' onClick={handleScrollToproduct}>Contact Us</div>
             <div className='sliding-background hover:cursor-pointer text-green-700 border border-green-700 p-2'>Subscribe</div>
 
             <div className='rounded-full bg-white p-2 '>
