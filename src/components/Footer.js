@@ -51,15 +51,25 @@ const Footer = ({scrollToRef,productRef}) => {
         opacity:0,
         y:100,
       },
-      animate:{
-        opacity:1,
-        y:0
-      }
-      ,
-      transition:{
-        duration: 10,
-        delay: 0.2,
-      }
+      // animate:{
+      //   opacity:1,
+      //   y:0
+      // }
+      // ,
+      // transition:{
+      //   duration: 10,
+      //   delay: 0.2,
+      // }
+
+      animate:(index)=>(
+        {
+          opacity:1,
+          y:0,
+          transition:{
+            delay:0.05*index,
+          },
+        }),
+      
     }
 
   return (
@@ -105,16 +115,19 @@ onClick={()=>{handleOnclick("twitter")}}
             variants={fadeInAnimationVariants}
         initial="initial"
         whileInView="animate"
+        custom='1'
              className='underline-hover text-green-700  ' onClick={handleScrollToAbout}  >About us</motion.div>
             <motion.div
             variants={fadeInAnimationVariants}
         initial="initial"
         whileInView="animate"
+        custom='3'
              className='underline-hover text-green-700 ' onClick={handleScrollToproduct}  >Products</motion.div>
             <motion.div 
             variants={fadeInAnimationVariants}
         initial="initial"
         whileInView="animate"
+        custom='5'
             className='sliding-background hover:cursor-pointer text-green-700 border border-green-700 p-2'  >Subscribe</motion.div>
         </div>
     </div>
