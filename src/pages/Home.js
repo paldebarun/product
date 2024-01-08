@@ -14,13 +14,13 @@ const Home = () => {
     const productRef=useRef(null);
 
     return (
-        <div className='px-3 '>
+        <div className='px-3 overflow-x-hidden'>
            {/* Navigation bar */}
             <Navbar scrollToRef={aboutRef} productRef={productRef} />
             {/* introsection */}
             <div className='Introsection p-2 flex   w-[10/12] gap-[20px] h-[500px]  flex-col justify-center items-center  '>
                 {/* intro text */}
-                <div className='font-bold text-5xl sm:text-8xl text-green-700'>LOMBOK</div>
+                <div className='font-bold t text-4xl h-auto sm:text-8xl text-green-700'>LOMBOK</div>
                 <div className='text-green-700'>HOLISTIC HEALTH</div>
                 <div className='w-[100px] sm:w-[200px] h-[5px] rounded-xl bg-green-700'></div>
 
@@ -47,7 +47,7 @@ const Home = () => {
 
             </div>
             {/* about us section */}
-            <div ref={aboutRef} className='flex md:flex-row h-[450px] md:h-[500px] flex-col md:gap-0 gap-[15px]'>
+            <div ref={aboutRef} className='flex h-auto md:flex-row  md:h-[500px] flex-col md:gap-0 gap-[15px]'>
                 <div className='md:w-6/12 h-full '>
                     <img src={aboutpagebackgrounde} className='w-full h-full' />
                 </div>

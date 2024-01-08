@@ -37,7 +37,7 @@ const Productwiper = () => {
 
 
   return (
-    <div>
+    <div >
     <Swiper
     spaceBetween={30}
     centeredSlides={true}
@@ -51,12 +51,12 @@ const Productwiper = () => {
     // }}
     // navigation={true}
     modules={[Autoplay]}
-    className="mySwiper"
+    className="mySwiper  h-auto flex items-center"
   >
 
     {productdata.map((product, index) => (
         <SwiperSlide  key={product} virtualIndex={index}>
-          <Product image={product.image} description={product.description} />
+          <Product  image={product.image} description={product.description} />
         </SwiperSlide>
         
       ))}

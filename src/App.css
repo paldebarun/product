@@ -1,8 +1,11 @@
 .App {
   text-align: center;
-  overflow-x: hidden;
+ 
 }
 
+*{
+  user-select: none;
+}
 
 
 .App-logo {
