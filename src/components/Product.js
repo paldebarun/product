@@ -13,7 +13,7 @@ const Product = ({image,description,product}) => {
   }
 
   return (
-    <div onClick={handleProductOnclickHandler}  className='hover:scale-105 m-5  border transition-all duration-200   flex flex-col  w-full md:w-[300px] lg:w-[350px] justify-between shadow-lg  h-[450px] sm:h-[600px] items-center'>
+    <div onClick={handleProductOnclickHandler}  className='hover:scale-105 m-5  hover:cursor-pointer transition-all duration-200   flex flex-col  w-full md:w-[300px] lg:w-[350px] justify-between shadow-lg  h-[450px] sm:h-[600px] items-center'>
     
     <img src={image} className=' w-[200px] sm:w-full h-auto  ' />
     

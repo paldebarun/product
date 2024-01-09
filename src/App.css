@@ -4,6 +4,10 @@
 }
 
 *{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+*{
   user-select: none;
 }
 

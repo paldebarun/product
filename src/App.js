@@ -22,7 +22,7 @@ function App() {
         top:0
         }} 
         
-        className="w-full h-[5px] sticky z-20  bg-green-700">
+        className="w-full h-[5px] md:h-[7px] sticky z-20  bg-green-700">
 
       </motion.div>
 

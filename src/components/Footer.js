@@ -4,10 +4,14 @@ import { FaFacebook } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa";
 import {motion} from 'framer-motion'
 import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+
 
 const Footer = ({scrollToRef,productRef}) => {
    
     const navigate=useNavigate();
+    const location=useLocation();
+
 
     const handleScrollToAbout = () => {
         if (scrollToRef && scrollToRef.current) {
@@ -17,7 +21,8 @@ const Footer = ({scrollToRef,productRef}) => {
             });
         }
     }
-
+    
+    const inHome=location.pathname ==='/';
     
 
     const handleScrollToproduct = () => {
@@ -63,45 +68,59 @@ const Footer = ({scrollToRef,productRef}) => {
       
     }
 
+    
+
   return (
     <div className='w-full  flex flex-col sm:flex-row gap-[30px] sm:gap-0 justify-center sm:justify-between items-center px-3 h-[200px] bg-amber-100'>
       <div className='flex  gap-[30px] sm:gap-[15px] '>
-      <motion.div>
+      <motion.div
+       variants={fadeInAnimationVariants}
+        initial="initial"
+        whileInView="animate"
+       custom="1"
+      
+      >
       <RiInstagramFill
         
         onClick={()=>{handleOnclick("insta")}}
 
-        variants={fadeInAnimationVariants}
-        initial="initial"
-        whileInView="animate"
+       
          className='w-[30px] text-slate-500 h-[30px] hover:scale-110 transition-all duration-200 hover:cursor-pointer'/>
       </motion.div>
 
-      <motion.div>
+      <motion.div
+      
+      variants={fadeInAnimationVariants}
+        initial="initial"
+        whileInView="animate"
+       custom="3"
+      
+      >
       <FaFacebook
        
        onClick={()=>{handleOnclick("")}}
 
-        variants={fadeInAnimationVariants}
-        initial="initial"
-        whileInView="animate"
+        
          className='w-[30px] text-slate-500 h-[30px] hover:scale-110 transition-all duration-200 hover:cursor-pointer'/>
       </motion.div>
         
-         <motion.div>
+         <motion.div
+         variants={fadeInAnimationVariants}
+        initial="initial"
+        whileInView="animate"
+        custom="5"
+          >
          <FaTwitter
 
 onClick={()=>{handleOnclick("twitter")}}
 
-         variants={fadeInAnimationVariants}
-        initial="initial"
-        whileInView="animate"
+         
          className='w-[30px] text-slate-500 h-[30px] hover:scale-110 transition-all duration-200 hover:cursor-pointer'/>
          </motion.div>
         
       </div>
 
-      <div className='flex gap-[20px] items-center'>
+      {inHome && <div className='flex gap-[20px] items-center'>
             <motion.div
             variants={fadeInAnimationVariants}
         initial="initial"
@@ -129,7 +148,7 @@ onClick={()=>{handleOnclick("twitter")}}
         whileInView="animate"
         custom='7'
             className='sliding-background text-[10px] sm:text-md hover:cursor-pointer text-green-700 border border-green-700 p-2'  >Subscribe</motion.div>
-        </div>
+        </div>}
     </div>
   )
 }

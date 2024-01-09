@@ -16,7 +16,7 @@ const Navbar = ({scrollToRef,productRef,contactRef}) => {
         setmenu(!openmenu);
     }
     
-    const isHome = location.pathname === '/';
+    const inHome = location.pathname === '/';
 
     const handleScrollToAbout = () => {
         if (scrollToRef && scrollToRef.current) {
@@ -64,18 +64,18 @@ const Navbar = ({scrollToRef,productRef,contactRef}) => {
       
   return (
     <div className='w-screen relative h-auto flex justify-between items-center p-[30px] '>
-        <div onClick={()=>{handleOnclick("home")}}  className='logo hover:cursor-pointer hover:scale-110 duration-200 transition-all  hidden sm:flex  text-lg font-extrabold text-green-700'>
+        <div onClick={()=>{handleOnclick("home")}}  className={inHome ?'logo hover:cursor-pointer hover:scale-110 duration-200 transition-all  hidden sm:flex  text-lg font-extrabold text-green-700' : 'logo hover:cursor-pointer hover:scale-110 duration-200 transition-all  flex  text-lg font-extrabold text-green-700'}>
             L O
         </div>
 
-       { <div className='hidden sm:flex gap-[20px] items-center'>
+       {inHome && <div className='hidden sm:flex gap-[20px] items-center'>
             <div className='underline-hover text-green-700  ' onClick={handleScrollToAbout}>About us</div>
             <div className='underline-hover text-green-700 ' onClick={handleScrollToproduct}>Products</div>
             <div className='underline-hover text-green-700 ' onClick={handleScrollToContact}>Contact Us</div>
             <div className='sliding-background hover:cursor-pointer text-green-700 border border-green-700 p-2'>Subscribe</div>
         </div>}
 
-        <div className='sm:hidden'>
+        { inHome && <div className='sm:hidden'>
             {openmenu ?<div className=' absolute w-[200px] bg-slate-100 rounded-md p-3 flex gap-[20px] flex-col items-center right-[20px] top-4'>
 
             <div className='underline-hover text-green-700 ' onClick={handleScrollToAbout}>About us</div>
@@ -88,7 +88,7 @@ const Navbar = ({scrollToRef,productRef,contactRef}) => {
             </div>
             </div> : <IoMdMenu  onClick={HandleOpenMenu} className='text-green-700 w-[25px] absolute right-[20px] h-[25px]'/>}
             
-        </div>
+        </div>}
     </div>
   )
 }
