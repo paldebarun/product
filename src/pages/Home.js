@@ -119,7 +119,7 @@ const Home = () => {
             <div className='w-full h-[100px]'></div>
             {/* footer section */}
 
-            <Footer scrollToRef={aboutRef} productRef={productRef} />
+            <Footer scrollToRef={aboutRef} contactRef={contactRef} productRef={productRef} />
 
         </div>
     )

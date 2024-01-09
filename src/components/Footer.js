@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 
 
-const Footer = ({scrollToRef,productRef}) => {
+const Footer = ({scrollToRef,productRef,contactRef}) => {
    
     const navigate=useNavigate();
     const location=useLocation();
@@ -21,6 +21,15 @@ const Footer = ({scrollToRef,productRef}) => {
             });
         }
     }
+
+    const handleScrollToContact = () => {
+      if (contactRef && contactRef.current) {
+          window.scrollTo({
+              top: contactRef.current.offsetTop,
+              behavior: 'smooth'
+          });
+      }
+  }
     
     const inHome=location.pathname ==='/';
     
@@ -140,7 +149,7 @@ onClick={()=>{handleOnclick("twitter")}}
         initial="initial"
         whileInView="animate"
         custom='5'
-             className='underline-hover text-[10px] sm:text-md text-green-700 ' onClick={handleScrollToproduct} >Contact Us</motion.div>
+             className='underline-hover text-[10px] sm:text-md text-green-700 ' onClick={handleScrollToContact} >Contact Us</motion.div>
 
             <motion.div 
             variants={fadeInAnimationVariants}
