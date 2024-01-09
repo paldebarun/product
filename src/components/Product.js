@@ -1,10 +1,19 @@
 import React from 'react'
 import bgimage from '../images/pawel-czerwinski-lWBZ01XRRoI-unsplash.jpg'
+import { useNavigate } from 'react-router-dom';
 
+const Product = ({image,description,product}) => {
+  const navigate=useNavigate();
 
-const Product = ({image,description}) => {
+  const handleProductOnclickHandler=()=>{
+    console.log('Product clicked:', product);
+    navigate('/productpage',{ state: { product} });
+    
+
+  }
+
   return (
-    <div className='hover:scale-105 m-5 hover:cursor-pointer border transition-all duration-200   flex flex-col  w-full md:w-[300px] lg:w-[350px] justify-between shadow-lg  h-[450px] sm:h-[600px] items-center'>
+    <div onClick={handleProductOnclickHandler}  className='hover:scale-105 m-5  border transition-all duration-200   flex flex-col  w-full md:w-[300px] lg:w-[350px] justify-between shadow-lg  h-[450px] sm:h-[600px] items-center'>
     
     <img src={image} className=' w-[200px] sm:w-full h-auto  ' />
     

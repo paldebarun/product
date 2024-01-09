@@ -2,6 +2,7 @@ import './App.css';
 import { Route,Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import {motion,useScroll,useSpring} from 'framer-motion'
+import ProductPage from './pages/ProductPage';
 
 
 function App() {
@@ -21,12 +22,13 @@ function App() {
         top:0
         }} 
         
-        className="w-full h-[7px] sticky z-20  bg-green-700">
+        className="w-full h-[5px] sticky z-20  bg-green-700">
 
       </motion.div>
 
     <Routes>
     <Route path='/' element={<Home/>} />
+    <Route path='/productpage' element={<ProductPage/>} />
     </Routes>
       
     </div>

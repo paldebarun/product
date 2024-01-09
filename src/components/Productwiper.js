@@ -1,4 +1,4 @@
-import React, { useRef, useState,useEffect } from 'react';
+import React, {  useState,useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import productdata from '../constants/Productdata';
 import Product from './Product';
@@ -6,13 +6,21 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
+
 // import './styles.css';
 
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 
 const Productwiper = () => {
-
+    
     const [slidesPerView, setSlidesPerView] = useState(3); // Default value
+    
+    // const handleProductOnclickHandler=(product)=>{
+    //   console.log('Product clicked:', product);
+    //   navigate('/productpage',{product});
+      
+
+    // }
 
   useEffect(() => {
     const handleResize = () => {
@@ -46,17 +54,13 @@ const Productwiper = () => {
       disableOnInteraction: false,
     }}
     slidesPerView={slidesPerView}
-    // pagination={{
-    //   clickable: true,
-    // }}
-    // navigation={true}
     modules={[Autoplay]}
     className="mySwiper  h-auto flex items-center"
   >
 
     {productdata.map((product, index) => (
         <SwiperSlide  key={product} virtualIndex={index}>
-          <Product  image={product.image} description={product.description} />
+          <Product product={product}  image={product.image} description={product.description} />
         </SwiperSlide>
         
       ))}
