@@ -7,7 +7,7 @@ import { useRef } from 'react';
 import Footer from '../components/Footer';
 import LogoText from '../constants/LogoText';
 import { motion } from 'framer-motion'
-import { useForm } from 'react-hook-form';
+
 import ContactForm from '../components/ContactForm';
 import googlemap from '../images/googlemaps.png'
 
@@ -33,7 +33,7 @@ const Home = () => {
     const aboutRef = useRef(null);
     const productRef = useRef(null);
     const contactRef = useRef(null);
-    const { register, handleSubmit, formState: { errors } } = useForm();
+   
 
 
     const onSubmit = (data) => {
@@ -111,10 +111,12 @@ const Home = () => {
 
             {/* contact us form */}
 
-            <div ref={contactRef} className='flex flex-col lg:gap-0 gap-[20px] lg:flex-row'>
+            <div ref={contactRef} className='flex  flex-col lg:gap-0 gap-[20px] lg:flex-row'>
             <div className='w-full lg:w-6/12'><img src={googlemap} className='w-full h-full'/></div>
 
                 <ContactForm />
+
+                
             </div>
 
 
