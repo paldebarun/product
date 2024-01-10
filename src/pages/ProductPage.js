@@ -1,17 +1,32 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 import Navbar from '../components/Navbar'
-import productdata from '../constants/Productdata'
+import ContactForm from '../components/ContactForm'
 import { useState,useEffect } from 'react'
 import Productwiper from '../components/Productwiper'
 import '../pages/ProductPage.css'
 import Footer from '../components/Footer'
+import { IoIosClose } from "react-icons/io";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const ProductPage = () => {
+
+  useEffect(() => {
+    AOS.init({duration:1500});
+  }, []);
 
   const location=useLocation();
 
   const [product,setproduct]=useState(location.state.product);
+  const [enquirybox,setopenenquirybox]=useState(false);
+
+  const HandleEnquiryBox=()=>{
+
+    setopenenquirybox(!enquirybox);
+  }
+
+
   console.log("this is product",product);
 
   useEffect(() => {
@@ -20,21 +35,35 @@ const ProductPage = () => {
   }, [location.state.product]);
   
   return (
-    <div>
+    <div className='relative '>
      <Navbar  />
+    {enquirybox && <div className='w-screen opacity-80 h-full bg-gradient-to-r from-black to-slate-500 absolute z-10'>
+
+      
+    </div>}
 
     <div className='w-full h-[70px]'></div>
+    
+    {/* <div className='absolute bg-white border w-[400px] h-[600px]'>
+
+    </div> */}
+   {enquirybox && <div className='w-screen h-auto z-20     absolute  flex flex-col items-center p-3 ' data-aos="flip-right" >
+   <ContactForm className='bg-white '/>
+   <IoIosClose onClick={HandleEnquiryBox} className='border bg-white hover:cursor-pointer rounded-full w-[30px] h-[30px]' />
+   </div>}
+   
+  <div className='w-screen h-[100px]'></div>
 
     <div className='flex flex-col sm:flex-row gap-[20px] w-screen px-[20px] items-center sm:items-start md:items-center'>
  
-    <img src={product.image} className='border rounded-xl w-[200px] h-6/12 sm:w-4/12 sm:h-5/12' />
+    <img src={product.image} className=' rounded-xl w-[200px] h-6/12 sm:w-4/12 sm:h-5/12' />
     
     <div className='flex items-center flex-col h-full justify-between gap-[15px] sm:gap-[15px] md:gap-[60px]'>
     
     <div className='w-auto text-center sm:text-left text-[7px] sm:text-sm md:text-[8px] lg:text-[15px] xl:text-[20px] '>{product.description}</div>
 
 
-    <div className= ' sliding-background hover:cursor-pointer text-white bg-red-600 text-[10px] md:text-sm w-[70px] md:w-[100px] rounded-md p-3'>Enquiry</div>
+    <div className= ' sliding-backgrounde hover:cursor-pointer text-white bg-red-600 text-[10px] md:text-sm w-[70px] md:w-[100px] rounded-md p-3' onClick={HandleEnquiryBox}>Enquiry</div>
 
     </div>
      

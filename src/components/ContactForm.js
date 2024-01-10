@@ -1,6 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form';
-import googlemap from '../images/googlemaps.png'
+import { toast } from 'react-hot-toast';
+import { useLocation } from 'react-router-dom';
 
 const ContactForm = () => {
 
@@ -9,20 +10,26 @@ const ContactForm = () => {
 
     const onSubmit=(data)=>{
         console.log("this is contact form data ",data);
+        toast.success("the message is submitted");
      }
 
+    const location=useLocation();
 
+    
+    const inProductPage=location.pathname==='/productpage'
+
+    
 
   return (
-    <div  className='flex flex-col lg:gap-0 gap-[20px] lg:flex-row'>
+   
          
-         <div className='w-full lg:w-6/12'><img src={googlemap} className='w-full h-full'/></div>
+         
 
           <form onSubmit={handleSubmit(onSubmit)} className=' h-[600px] p-5 w-full lg:w-6/12 gap-[20px] flex flex-col justify-center items-center'>
                 <div className='flex flex-col sm:flex-row gap-[20px]'>
                     
                     <div className='flex flex-col gap-[5px] justify-center items-start'>
-                    <div>First Name</div>
+                    <div className={inProductPage ?'text-white':'text-green-700'}>First Name</div>
                         <input 
                             type="text" 
                             className='border rounded-md bg-slate-200 outline-none p-3 ' 
@@ -35,7 +42,7 @@ const ContactForm = () => {
                        
                    
                     <div className='flex flex-col items-start gap-[5px]'>
-                       <div>Last Name</div>
+                       <div className={inProductPage ?'text-white':'text-green-700'}>Last Name</div>
                         <input 
                             type="text" 
                             className='border rounded-md bg-slate-200 outline-none p-3' 
@@ -46,7 +53,7 @@ const ContactForm = () => {
                     </div>
                 </div>
                 <div className='flex w-7/12 flex-col gap-[5px] items-start'>
-                   <div>Email</div>
+                   <div className={inProductPage ?'text-white':'text-green-700'}>Email</div>
                     <input 
                         type="email" 
                         placeholder="Enter email" 
@@ -56,7 +63,7 @@ const ContactForm = () => {
                     {errors.email && <span className='text-red-500 text-[10px]'>*This field is required</span>}
                 </div>
                 <div className='flex flex-col w-7/12 items-start gap-[10px]'>
-                   <div>Message</div>
+                   <div className={inProductPage ?'text-white':'text-green-700'}>Message</div>
                     <textarea 
                         placeholder="Message" 
                         className='border outline-none p-5 w-full rounded-md bg-slate-200'
@@ -67,7 +74,7 @@ const ContactForm = () => {
                 <div onClick={onSubmit} className='sliding-background hover:scale-110 transition-all duration-200 bg-green-700 text-white p-3 rounded-sm  hover:cursor-pointer'>Submit</div>
             </form>
 
-</div>
+
   )
 }
 

@@ -4,12 +4,12 @@
     background-size:cover;
 }
 
-.sliding-background {
+.sliding-backgrounds {
     position: relative;
     overflow: hidden;
 }
 
-.sliding-background::before {
+.sliding-backgrounds::before {
     content: "";
     position: absolute;
     top: 0;
@@ -20,6 +20,6 @@
     transition: width 0.3s ease-in-out;
 }
 
-.sliding-background:hover::before {
+.sliding-backgrounds:hover::before {
     width: 100%;
 }
