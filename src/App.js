@@ -12,7 +12,7 @@ function App() {
   const scalex=useSpring(scrollYProgress);
 
   return (
-    <div className="App">
+    <div className="App  overflow-x-hidden">
    
    <motion.div 
       style={{

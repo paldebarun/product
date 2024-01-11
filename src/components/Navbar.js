@@ -5,6 +5,7 @@ import { IoIosClose } from "react-icons/io";
 import '../components/Navbar.css'
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import { IoMdHome } from "react-icons/io";
 
 const Navbar = ({scrollToRef,productRef,contactRef}) => {
 
@@ -64,7 +65,7 @@ const Navbar = ({scrollToRef,productRef,contactRef}) => {
       
   return (
     <div className='w-screen relative h-auto flex justify-between items-center p-[30px] '>
-        <div onClick={()=>{handleOnclick("home")}}  className={inHome ?'logo hover:cursor-pointer hover:scale-110 duration-200 transition-all  hidden sm:flex  text-lg font-extrabold text-green-700' : 'logo hover:cursor-pointer hover:scale-110 duration-200 transition-all  flex  text-lg font-extrabold text-green-700'}>
+        <div onClick={()=>{handleOnclick("home")}}  className={inHome ?'logo hover:cursor-pointer hover:scale-110 duration-200 transition-all  hidden sm:flex  text-lg font-extrabold text-green-700' : 'logo hover:cursor-pointer hover:scale-110 duration-200 transition-all  flex text-lg lg:text-2xl font-extrabold text-green-700'}>
             L O
         </div>
 
@@ -89,6 +90,10 @@ const Navbar = ({scrollToRef,productRef,contactRef}) => {
             </div> : <IoMdMenu  onClick={HandleOpenMenu} className='text-green-700 w-[25px] absolute right-[20px] h-[25px]'/>}
             
         </div>}
+
+        {!inHome &&
+        <IoMdHome onClick={()=>{handleOnclick("home")}}  className='lg:w-[40px] lg:h-[40px] w-[25px] h-[25px] text-green-700 hover:scale-110 transition-all duration-200 hover:cursor-pointer' />
+        }
     </div>
   )
 }

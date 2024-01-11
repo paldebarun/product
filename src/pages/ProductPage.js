@@ -13,7 +13,8 @@ import 'aos/dist/aos.css'
 const ProductPage = () => {
 
   useEffect(() => {
-    AOS.init({duration:1500});
+    
+    window.scrollTo(0, 0);
   }, []);
 
   const location=useLocation();
@@ -35,19 +36,19 @@ const ProductPage = () => {
   }, [location.state.product]);
   
   return (
-    <div className='relative '>
+    <div className={enquirybox ?'relative ':'relative'}>
      <Navbar  />
-    {enquirybox && <div className='w-screen opacity-80 h-full bg-gradient-to-r from-black to-slate-500 absolute z-10'>
+    {/* {enquirybox && <div className='w-screen  opacity-80 h-full bg-gradient-to-r from-black to-slate-500 absolute z-10'>
 
       
-    </div>}
+    </div>} */}
 
     <div className='w-full h-[70px]'></div>
     
     {/* <div className='absolute bg-white border w-[400px] h-[600px]'>
 
     </div> */}
-   {enquirybox && <div className='w-screen h-auto z-20     absolute  flex flex-col items-center p-3 ' data-aos="flip-right" >
+   {enquirybox && <div className='w-screen h-auto z-20     absolute  flex flex-col items-center p-3 '  >
    <ContactForm className='bg-white '/>
    <IoIosClose onClick={HandleEnquiryBox} className='border bg-white hover:cursor-pointer rounded-full w-[30px] h-[30px]' />
    </div>}

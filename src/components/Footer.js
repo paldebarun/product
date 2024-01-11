@@ -63,7 +63,7 @@ const Footer = ({scrollToRef,productRef,contactRef}) => {
     const fadeInAnimationVariants={
       initial:{
         opacity:0,
-        y:100,
+        y:50,
       },
       animate:(index)=>(
         {

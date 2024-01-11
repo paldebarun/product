@@ -12,8 +12,14 @@ const Product = ({image,description,product}) => {
 
   }
 
+  const HandleEnquiryBox=()=>{
+    
+    
+    
+  }
+
   return (
-    <div onClick={handleProductOnclickHandler}  className='hover:scale-105 m-5  hover:cursor-pointer transition-all duration-200   flex flex-col  w-full md:w-[300px] lg:w-[350px] justify-between shadow-lg  h-[450px] sm:h-[600px] items-center'>
+    <div onClick={handleProductOnclickHandler}  className='hover:scale-105 m-5  hover:cursor-pointer transition-all duration-200  py-5 flex flex-col  w-full md:w-[300px] lg:w-[350px] justify-between shadow-lg  h-[560px] sm:h-[600px] items-center'>
     
     <img src={image} className=' w-[200px] sm:w-full h-auto  ' />
     
@@ -27,6 +33,8 @@ const Product = ({image,description,product}) => {
 
         {description.length > 100 ? `${description.substring(0, 100)}...`:description}
     </div>
+
+    <div className= ' sliding-backgrounde hover:cursor-pointer text-white bg-red-600 text-[10px] md:text-sm w-[70px] md:w-[100px] rounded-md p-3' onClick={HandleEnquiryBox}>Enquiry</div>
     
     </div>
   )

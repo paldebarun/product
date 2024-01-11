@@ -45,7 +45,7 @@ const Home = () => {
             {/* Navigation bar */}
             <Navbar scrollToRef={aboutRef} contactRef={contactRef} productRef={productRef} />
             {/* introsection */}
-            <div className='Introsection p-2 flex   w-[10/12] gap-[20px] h-[500px]  flex-col justify-center items-center  '>
+            <div className='Introsection p-2 flex overflow-x-hidden  w-[10/12] gap-[20px] h-[500px]  flex-col justify-center items-center  '>
                 {/* intro text */}
                 {/* <div className='font-bold t text-4xl h-auto sm:text-8xl text-green-700'>
                 LOMBOK</div> */}
