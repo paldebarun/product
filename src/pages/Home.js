@@ -36,9 +36,9 @@ const Home = () => {
    
 
 
-    const onSubmit = (data) => {
-        console.log("this is contact form data ", data);
-    }
+    // const onSubmit = (data) => {
+    //     console.log("this is contact form data ", data);
+    // }
 
     return (
         <div className='px-3 overflow-x-hidden'>
@@ -88,12 +88,12 @@ const Home = () => {
 
             </div>
             {/* about us section */}
-            <div ref={aboutRef} className='flex h-auto md:flex-row  md:h-[500px] flex-col md:gap-0 gap-[15px]'>
-                <div className='md:w-6/12 h-full '>
+            <div ref={aboutRef} className='flex h-auto xl:flex-row  md:h-[500px] flex-col xl:gap-0 gap-[50px]'>
+                <div className='xl:w-6/12 h-full '>
                     <img src={aboutpagebackgrounde} className='w-full h-full' />
                 </div>
 
-                <div className='flex w-full md:w-6/12  flex-col items-center gap-[20px]'>
+                <div className='flex w-full xl:w-6/12  flex-col items-center gap-[20px]'>
                     <div className='w-full flex items-center flex-col gap-[15px]'>
                         <div className='text-green-700 font-bold text-2xl'>
                             ABOUT

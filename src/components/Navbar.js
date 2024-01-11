@@ -65,7 +65,7 @@ const Navbar = ({scrollToRef,productRef,contactRef}) => {
       
   return (
     <div className='w-screen relative h-auto flex justify-between items-center p-[30px] '>
-        <div onClick={()=>{handleOnclick("home")}}  className={inHome ?'logo hover:cursor-pointer hover:scale-110 duration-200 transition-all  hidden sm:flex  text-lg font-extrabold text-green-700' : 'logo hover:cursor-pointer hover:scale-110 duration-200 transition-all  flex text-lg lg:text-2xl font-extrabold text-green-700'}>
+        <div onClick={()=>{handleOnclick("home")}}  className={inHome ?'logo hover:cursor-pointer hover:scale-110 duration-200 transition-all  hidden sm:flex  text-lg lg:text-3xl font-extrabold text-green-700' : 'logo hover:cursor-pointer hover:scale-110 duration-200 transition-all  flex text-lg lg:text-3xl font-extrabold text-green-700'}>
             L O
         </div>
 
