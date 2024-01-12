@@ -3,16 +3,28 @@ import Navbar from '../components/Navbar';
 import './Home.css'
 import Productwiper from '../components/Productwiper';
 import aboutpagebackgrounde from '../images/aboutpagebackground.png'
-import { useRef } from 'react';
+import { useRef,useState } from 'react';
 import Footer from '../components/Footer';
 import LogoText from '../constants/LogoText';
 import { motion } from 'framer-motion'
 
 import ContactForm from '../components/ContactForm';
-import googlemap from '../images/googlemaps.png'
+// import googlemap from '../images/googlemaps.png'
+import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+ 
 
+const Home = ({ google }) => {
+    
+    const [selectedPlace, setSelectedPlace] = useState(null);
 
-const Home = () => {
+    const onMarkerClick = (props, marker, e) => {
+      setSelectedPlace(props);
+    };
+  
+    const onInfoWindowClose = () => {
+      setSelectedPlace(null);
+    };
+   
 
     const fadeInAnimationVariants = {
         initial: {
@@ -34,14 +46,16 @@ const Home = () => {
     const productRef = useRef(null);
     const contactRef = useRef(null);
    
-
+    const containerStyle = {
+        
+      }
 
     // const onSubmit = (data) => {
     //     console.log("this is contact form data ", data);
     // }
 
     return (
-        <div className='px-3 overflow-x-hidden'>
+        <div className='px-3 h-auto overflow-x-hidden'>
             {/* Navigation bar */}
             <Navbar scrollToRef={aboutRef} contactRef={contactRef} productRef={productRef} />
             {/* introsection */}
@@ -89,6 +103,7 @@ const Home = () => {
             </div>
             {/* about us section */}
             <div ref={aboutRef} className='flex h-auto xl:flex-row  md:h-[500px] flex-col xl:gap-0 gap-[50px]'>
+
                 <div className='xl:w-6/12 h-full '>
                     <img src={aboutpagebackgrounde} className='w-full h-full' />
                 </div>
@@ -109,18 +124,47 @@ const Home = () => {
 
             <div className='w-screen h-[300px]'></div>
 
-            {/* contact us form */}
+            
 
-            <div ref={contactRef} className='flex  flex-col lg:gap-0 gap-[20px] lg:flex-row'>
-            <div className='w-full lg:w-6/12'><img src={googlemap} className='w-full h-full'/></div>
 
-                <ContactForm />
+            
 
+           
+
+
+ 
+
+           {/* contact us form */}
+
+            <div ref={contactRef} className='flex  flex-col lg:flex-row lg:gap-0 gap-[20px]'> 
+            
+                  
+            <Map google={google} 
+             containerStyle={
+                {position: 'relative',  
+              width: window.innerWidth < 1200 ? '100%' : '50%',
+              height:window.innerWidth < 600 ? '500px' : '600px'
+              
+               }}
+              
+         zoom={14} className='w-full lg:w-6/12'>
+      <Marker onClick={onMarkerClick} name={'Current location'} />
+
+      <InfoWindow onClose={onInfoWindowClose}>
+        <div>
+          <h1>{selectedPlace && selectedPlace.name}</h1>
+        </div>
+      </InfoWindow>
+    </Map>
+           
+        
+            <ContactForm />
                 
-            </div>
+             </div>
 
 
             <div className='w-full h-[100px]'></div>
+
             {/* footer section */}
 
             <Footer scrollToRef={aboutRef} contactRef={contactRef} productRef={productRef} />
@@ -128,5 +172,6 @@ const Home = () => {
         </div>
     )
 }
-
-export default Home;
+export default GoogleApiWrapper({
+    apiKey: ("AIzaSyD1H6vYzRDDrv3LCP0idGuSTiACkyF0yr8")
+  })(Home)

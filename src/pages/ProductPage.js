@@ -7,19 +7,22 @@ import Productwiper from '../components/Productwiper'
 import '../pages/ProductPage.css'
 import Footer from '../components/Footer'
 import { IoIosClose } from "react-icons/io";
-import AOS from 'aos'
-import 'aos/dist/aos.css'
+
 
 const ProductPage = () => {
-
-  useEffect(() => {
-    
-    window.scrollTo(0, 0);
-  }, []);
 
   const location=useLocation();
 
   const [product,setproduct]=useState(location.state.product);
+
+  useEffect(() => {
+    
+    window.scrollTo(0, 0);
+  }, [product]);
+
+  
+
+  
   const [enquirybox,setopenenquirybox]=useState(false);
 
   const HandleEnquiryBox=()=>{
